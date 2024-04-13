@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="coder" class="org.example.Developer" autowire="byType">
+        <property name="name" value="testing"/>
+        <property name="number" value="123"/>
+<!--        <property name="student" ref="dotnet"/>-->
+<!--        <constructor-arg type="int" value="345"/>-->
+<!--        <constructor-arg type="java.lang.String" value="asdf"/>-->
+<!--        <constructor-arg index="1" value="345"/>-->
+<!--        <constructor-arg index="0" value="asdf"/>-->
+        <constructor-arg name="name1" value="345"/>
+        <constructor-arg name="number" value="asdf"/>
+    </bean>
+<!--    <bean id="coder1" class="org.example.Developer"/>-->
+    <bean id="student" class="org.example.JavaDeveloper" primary="true"/>
+    <bean id="dotnet" class="org.example.DotNetDeveloper" lazy-init="true"/>
+<!--    <bean id="dotnet1" class="org.example.DotNetDeveloper" />-->
+</beans>
